@@ -1,0 +1,36 @@
+{
+  "name": "@iconagency/drupal-devtools",
+  "version": "0.0.1",
+  "description": "Tools for developers.",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky",
+    "test:phpunit": "vendor/bin/phpunit",
+    "test:behat": "scripts/test-behat-selenium",
+    "test:code:js": "scripts/test-code-js",
+    "test:code:php": "scripts/test-code-php",
+    "test:code:drupal": "scripts/test-code-drupal",
+    "test:code:drupal-rector": "scripts/test-code-drupal-rector",
+    "test:code:styles": "scripts/test-code-styles"
+  },
+  "devDependencies": {
+    "@iconagency/eslint-config": "^0.1.5",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/@iconagency/eslint-config/drupal"
+    ],
+    "ignorePatterns": [
+      "vite.config.js"
+    ],
+    "root": true
+  },
+  "stylelint": {
+    "extends": [
+      "@iconagency/eslint-config/style"
+    ]
+  },
+  "prettier": "@iconagency/eslint-config/prettier"
+}

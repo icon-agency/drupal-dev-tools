@@ -1,0 +1,41 @@
+{
+    "name": "iconagency/drupal-devtools",
+    "description": "Assets for running linters, pre-commit hooks, xdebug and unit testing during Drupal site development.",
+    "license": "proprietary",
+    "require": {
+        "drupal/core-composer-scaffold": "*",
+        "mglaman/drupal-check": "^1.4",
+        "palantirnet/drupal-rector": "^0.20.1"
+    },
+    "require-dev": {
+        "drupal/coder": "^8.3",
+        "dealerdirect/phpcodesniffer-composer-installer": "@stable",
+        "phpcompatibility/php-compatibility": "*",
+        "phpspec/prophecy-phpunit": "^2.2",
+        "phpunit/phpunit": "^10.5",
+        "squizlabs/php_codesniffer": "@stable",
+        "symfony/phpunit-bridge": "^7.0"
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "file-mapping": {
+                "./.lintstagedrc.yml": ".lintstagedrc.yml",
+                "./package.json": "package.json",
+                "./.nvmrc": ".nvmrc",
+                "./phpcs.xml.dist": "phpcs.xml.dist",
+                "./phpunit.xml.dist": "phpunit.xml.dist",
+                "./rector.php": "rector.php",
+                "./.env": ".env.example",
+                "[web-root]/sites/default/drush.yml": "assets/drush.yml",
+                "[web-root]/sites/default/settings.development.php": "assets/settings.development.php",
+                "[web-root]/sites/default/services.development.yml": "assets/services.development.yml",
+                "[web-root]/sites/default/services.yml": "assets/services.yml",
+                "[web-root]/sites/default/settings.php": {
+                    "mode": "replace",
+                    "path": "assets/settings.php",
+                    "overwrite": false
+                }
+            }
+        }
+    }
+}
